@@ -1,4 +1,5 @@
 import React from "react"
+import Followers from "./Followers";
 import GitUser from "./GitUser";
 
 
@@ -13,6 +14,7 @@ render() {
     <div>
       <h1>Githubby User Cards</h1>
       <GitUser/>
+      <Followers/>
     </div>
   )
 }

@@ -5,7 +5,7 @@ import axios from "axios";
 class GitUser extends React.Component{
 
     state = {
-        info: [{}],
+        bananas: [],
     };
 
     componentDidMount(){
@@ -13,7 +13,7 @@ class GitUser extends React.Component{
         .get("https://api.github.com/users/jessejohns-1")
         .then ((res) => {
             this.setState({
-                info: res.data,
+                bananas: res.data,
             })
         })
         .catch((err) => {
@@ -26,8 +26,22 @@ class GitUser extends React.Component{
 
     render(){
         return(
-            <div>
-                <h2>{this.state.info.login}</h2>
+            <div className="daddycool">
+                <div className="box">
+                <h2>Name:{this.state.bananas.login}</h2>
+                </div>
+                <div className="box">
+                <h2>Created At:{this.state.bananas.created_at}</h2>
+                </div>
+                <div className="box">
+                <h2>Last Updated:{this.state.bananas.updated_at}</h2>
+                </div>
+                <div className="box">
+                <h2>Followers:{this.state.bananas.followers}</h2>
+                </div>
+                <div className="box">
+                <h2>Following:{this.state.bananas.following}</h2>
+                </div>
             </div>
         )
     }
