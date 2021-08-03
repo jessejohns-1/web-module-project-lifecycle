@@ -10,7 +10,7 @@ class GitUser extends React.Component{
     render(){
         return(
             <div>
-                <h2>ace</h2>
+                <h2>THIS IS WHERE MY DATA GONE BE </h2>
             </div>
         )
     }

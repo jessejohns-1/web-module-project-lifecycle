@@ -1,5 +1,5 @@
 import React from "react"
-
+import GitUser from "./GitUser";
 
 
 class App extends React.Component{
