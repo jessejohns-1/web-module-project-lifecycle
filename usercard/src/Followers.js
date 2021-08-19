@@ -33,8 +33,9 @@ class Followers extends React.Component {
                            <div className="boxes">
                     <img src={user.avatar_url} alt="img"/>
                     </div>
-                    <div className="boxes">
-                    <h2>{user.repos_url}</h2>
+                    <div className="boxes1"><a href={`${user.html_url}`}>
+                    <div><button class="glow-on-hover2" type="button">{user.repos_url}</button></div>
+                    </a>
                     </div>
                     </div>
                     )
@@ -43,4 +44,5 @@ class Followers extends React.Component {
         )
     }
 }
+
 export default Followers;

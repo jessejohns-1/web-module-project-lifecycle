@@ -3,9 +3,9 @@ import axios from "axios";
 
 
 class GitUser extends React.Component{
-
+    
     state = {
-        bananas: [],
+        gitpeople: [],
     };
 
     componentDidMount(){
@@ -13,7 +13,7 @@ class GitUser extends React.Component{
         .get("https://api.github.com/users/jessejohns-1")
         .then ((res) => {
             this.setState({
-                bananas: res.data,
+                gitpeople: res.data,
             })
         })
         .catch((err) => {
@@ -27,22 +27,28 @@ class GitUser extends React.Component{
     render(){
         return(
             <div className="daddycool">
+                 <img src={this.state.gitpeople.avatar_url} alt="img" />
                 <div className="box">
-                <h2>Name:{this.state.bananas.login}</h2>
+                <h2>Name:{this.state.gitpeople.login}</h2>
                 </div>
                 <div className="box">
-                <h2>Created At:{this.state.bananas.created_at}</h2>
+                <h2>Created At:{this.state.gitpeople.created_at}</h2>
                 </div>
                 <div className="box">
-                <h2>Last Updated:{this.state.bananas.updated_at}</h2>
+                <h2>Last Updated:{this.state.gitpeople.updated_at}</h2>
                 </div>
                 <div className="box">
-                <h2>Followers:{this.state.bananas.followers}</h2>
+                <h2>Followers:{this.state.gitpeople.followers}</h2>
                 </div>
                 <div className="box">
-                <h2>Following:{this.state.bananas.following}</h2>
+                <h2>Following:{this.state.gitpeople.following}</h2>
                 </div>
+                <div className="box">
+                <h2>Public-Repos:{this.state.gitpeople.public_repos}</h2>
+                </div>
+                
             </div>
+            
         )
     }
 }
